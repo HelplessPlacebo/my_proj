@@ -1,0 +1,69 @@
+body{
+    background-image: url("../assetss/images/bg10.jpg");
+}
+
+
+.login{
+
+    width: 500px;
+    height: 520px;
+    background-color: #274959;
+
+    text-align: center;
+
+}
+
+.imgUser{
+
+    width: 90px;
+    height: 90px;
+    border: 7px solid #24364a;
+    border-radius: 60%;
+    margin: 25px 0 15px 0;
+
+}
+.rememberMe{
+    margin-right: 30%;
+    color: #4ce737;
+
+}
+.button{
+    padding: 10px 50px;
+    margin: 30px 0 20px 0;
+    font-size: 15px;
+    color : #fff;
+    background-color: tomato;
+    border: none;
+    border-bottom: 4px solid #ffa082;
+    cursor: pointer;
+}
+.button:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: firebrick;
+}
+.bg{
+    background-size: cover;
+    background-image: url("../assetss/images/bg10.jpg");
+}
+.bg10{
+    width: 1111px;
+    height: 520px;
+
+
+}
+.AuthError{
+    margin: 30px 0 20px 0;
+    color: firebrick;
+    font-size: 20px;
+}
+.LoginPageAlarm{
+    margin-left: 30%;
+    margin-bottom: 20%;
+}
+.logModalWindow{
+    margin-bottom: 20%;
+}
+.AuthButton{
+    margin-left: 17%;
+}

@@ -1,0 +1,66 @@
+.AddNewListWrapper{
+    display: grid;
+    padding: 30px;
+    grid-template-columns: 250px 70%;
+
+}
+
+.Addbutton{
+    font-family: "Tekton Pro";
+    width: 70px;
+    height: 35px;
+    padding: 10px 15px;
+    margin: 5px 0 20px 0;
+    font-size: 20px;
+    color : #f2fffc;
+    background-color: #62bfff;
+    border: none;
+    border-bottom: 4px solid #2db3ff;
+    cursor: pointer;
+}
+.Addbutton:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #238dbc;
+}
+.CreateAndGoBackButtons{
+    padding: 30px;
+    margin-left: 50%;
+}
+.AddNewListButton{
+    font-family: "Tekton Pro";
+    width: 200px;
+    height: 40px;
+    padding: 10px 15px;
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+    color : #f2fffc;
+    background-color: #269c4b;
+    border: none;
+    border-bottom: 4px solid #269c4b;
+    cursor: pointer;
+}
+.AddNewListButton:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #238dbc;
+}
+
+.GoBacktButton{
+    font-family: "Tekton Pro";
+    width: 200px;
+    height: 40px;
+    padding: 10px 15px;
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+    color : #f2f1f9;
+    background-color: #6756ab;
+    border: none;
+    border-bottom: 4px solid #6756ab;
+    cursor: pointer;
+}
+.GoBacktButton:hover {
+    transition: all 0.5s;
+    background: #f2f1f9;
+    color: #6756ab;
+}

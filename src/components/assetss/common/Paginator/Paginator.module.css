@@ -1,0 +1,32 @@
+.numbers {
+
+    color: firebrick;
+
+
+}
+
+.setNumbers{
+    margin-top: 20px;
+}
+
+.button{
+    padding: 5px 9px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color : #fff;
+    background-color: tomato;
+    border: none;
+    border-bottom: 4px solid #ffa082;
+    cursor: pointer;
+}
+.button:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: firebrick;
+}
+
+.NumbersFont{
+    font-family: "Century Gothic";
+  font-size: 20px;
+
+}

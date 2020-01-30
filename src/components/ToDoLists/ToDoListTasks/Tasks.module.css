@@ -1,0 +1,126 @@
+.Main {
+    font-family: "Tekton Pro";
+}
+.MainWrapper{
+    display: grid;
+    grid-template-columns: 50px 460px;
+}
+
+.TaskBodyWrapper{
+    display: grid;
+    grid-template-columns: 70px 300px 90px;
+}
+
+.deadline{
+    margin-left: 22%;
+    word-break: break-all;
+    color: firebrick;
+}
+
+.description{
+    margin-left: 15px;
+    margin-top: 15px;
+    word-break: break-all;
+}
+
+.Ramka{
+    margin-left: 10px;
+    margin-top: 10px;
+    border: inset #3a9489 3px;
+    border-radius: 1px;
+}
+.DoneRamka{
+    margin-left: 10px;
+    margin-top: 10px;
+    border: inset #58e229 3px;
+    border-radius: 1px;
+}
+
+.ToTrashIcon{
+}
+
+.iconStatus{
+    margin-top: 10px;
+    margin-left: 15%;
+}
+.Title{
+margin-top: 12px;
+    margin-left: 30%;
+    word-break: break-all;
+}
+
+.DetailsButton{
+    margin-left: 47%;
+}
+
+.detailsWrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 15px;
+}
+.startDate{
+    margin-left: 10px;
+    color: #40878d;
+}
+.descriptionText{
+    margin-top: 10px;
+    margin-right: 30px;
+    color: #4d9a24;
+}
+.TaskEditButton{
+    margin-top: 20px;
+}
+
+.TaskFormWrapper{
+    display: grid;
+    grid-template-columns: 80px 600px;
+}
+.TaskEditFromButtons{
+    margin-top: 50%;
+}
+.GoBackButton{
+   margin-top: 15px;
+}
+
+.MainFormWrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.CompletedInput{
+   margin-left: 20%;
+}
+.FormDescription{
+    margin-left: 30%;
+}
+.priority{
+
+}
+.TaskFormSaveButton {
+    padding: 6px 15px;
+width: 80px;
+    font-size: 18px;
+    color: #e7fff3;
+    background-color: #3686e3;
+    border: none;
+    border-radius: 15px;
+    border-bottom: 4px solid #6adcf2;
+    cursor: pointer;
+    font-family: "Lao UI";
+    transition: all 0.8s;
+    margin-top: 25px;
+}
+.TaskFormSaveButton:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #4378bd;
+}
+.CompletedFieldWrapper{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 90px 90px;
+}
+.cc{
+    margin-top: 15px;
+}

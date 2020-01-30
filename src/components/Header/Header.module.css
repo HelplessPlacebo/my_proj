@@ -1,0 +1,96 @@
+.header{
+    grid-area: h;
+    background-color: lightgrey;
+}
+.IconsWrapper{
+    display: grid;
+   /* grid-template-columns: 11% 70% 5% 9% 5%;*/
+    grid-template-columns: 80% 5% 5% 5% 5%;
+}
+.item{
+    font-family: "Leelawadee";
+}
+
+
+.log{
+    padding: 1px 11px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color : #e9ffbf;
+    background-color: #24364a;
+    border: none;
+    border-bottom: 4px solid #7ab2ff;
+    font-family: "HYPER DRIVE";
+
+    cursor: pointer;
+}
+.log:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #f34a3a;
+}
+
+.loader{
+    width: 150px;
+    height: 150px;
+    padding: 300px 350px;
+    border-radius: 60%;
+
+}
+.MessagesIconStyle{
+    width: 30px;
+    height: 30px;
+    border-radius: 1px;
+    margin-left: 30%;
+}
+
+.accountIconUserName{
+    margin-left: 10%;
+    margin-bottom: 10px;
+    color: #3873ff;
+    font-family: "Century Gothic";
+}
+.loginPosition{
+    margin-top: 10px;
+
+}
+.loginButton{
+    padding: 1px 11px;
+    margin: 5px 0 20px 0;
+    font-size: 20px;
+    color : #e9ffbf;
+    background-color: #16c5fe;
+    border: none;
+    border-bottom: 4px solid #0a759c;
+    font-family: "HYPER DRIVE";
+    cursor: pointer;
+}
+.loginButton:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #f34a3a;
+}
+
+
+.item a {
+    color: black;
+}
+
+.item a.active{
+    color: #6e97ff;
+}
+.startPosition{
+    justify-self: end;
+}
+
+.LogOutStyle{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.unloginedHeader{
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+.unloginedUsersIcon{
+    margin-left: 90%;
+}

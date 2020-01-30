@@ -1,0 +1,108 @@
+
+.Main {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+
+.DialogUserPhoto{
+    height:80px;
+    width: 80px;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+.padding{
+    padding: 20px;
+}
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 15px;
+
+}
+.dialogsItems a {
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.dialogsItems .active{
+    color: firebrick;
+}
+.messages {
+    padding: 21px;
+    color: darkslategray;
+}
+.img {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    margin-top: 15px;
+
+}
+.header{
+    font-style: normal;
+margin-left: 400px;
+
+}
+.button{
+    padding: 10px 15px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color : #fff;
+    background-color: tomato;
+    border: none;
+    border-bottom: 4px solid #ffa082;
+    cursor: pointer;
+}
+.button:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: firebrick;
+}
+.DialogArea{
+    border: solid #018fc7 2px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.item a {
+    color: darkslategray;
+    text-decoration: none;
+    font-family: "Tekton Pro";
+    font-size: 19px;
+
+
+}
+
+.item a.activeLink {
+
+    color: firebrick;
+}
+
+
+.deleteMessageStyle{
+    font-size: 15px;
+    color : #fff;
+    background-color: tomato;
+    border: none;
+    border-bottom: 4px solid #ffa082;
+    cursor: pointer;
+}
+.deleteMessageStyle:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: firebrick;
+}
+.ConfirmText{
+    margin-left: 400px;
+}
+.ToTrash{
+    margin-left: 77%;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}

@@ -1,0 +1,26 @@
+.contacts {
+
+    margin: 14px 0  0;
+}
+.aboutME{
+
+    margin: 14px 0  0;
+}
+.buttonEditInformation {
+    padding: 5px 11px;
+    margin: 15px 0 20px 0px;
+    font-size: 15px;
+    color: #e7fff3;
+    background-color: #ff7663;
+    border: none;
+    border-radius: 15px;
+    border-bottom: 4px solid #f24e3b;
+    cursor: pointer;
+    font-family: "Lao UI";
+    transition: all 0.8s;
+}
+.buttonEditInformation:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #ff7663;
+}

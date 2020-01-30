@@ -1,0 +1,45 @@
+.FoundedUsersWrapper{
+    display : grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-left: 5%;
+}
+.GoBack {
+    padding: 6px 11px;
+    font-size: 17px;
+    color: #e7fff3;
+    background-color: #ff7663;
+    border: none;
+    border-radius: 15px;
+    border-bottom: 4px solid #f24e3b;
+    cursor: pointer;
+    font-family: "Lao UI";
+    transition: all 0.8s;
+    margin-top: 25px;
+    margin-left: 50%;
+}
+.GoBack:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #ff7663;
+}
+.foundArea{
+    border: solid #018fc7 2px;
+    border-radius: 20px;
+    margin: 20px;
+
+}
+.SearchingResult{
+    margin-left: 50%;
+    color: darkslategray;
+    text-decoration: none;
+    font-family: "Tekton Pro";
+    font-size: 19px;
+}
+.FoundedUsers{
+margin-bottom: 30px;
+
+}
+.FindUserButton{
+    margin-left: 50%;
+    margin-top: 2%;
+}

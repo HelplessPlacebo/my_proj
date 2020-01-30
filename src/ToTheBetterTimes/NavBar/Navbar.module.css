@@ -1,0 +1,36 @@
+.nav {
+    grid-area: n;
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+.item a {
+    color: darkslategray;
+    text-decoration: none;
+    font-family: "Tekton Pro";
+    font-size: 19px;
+
+
+}
+
+.item a.activeLink {
+
+    color: firebrick;
+}
+
+.item img {
+    height: 15px;
+    border-radius: 20px;
+}
+.friends{
+    margin-top: 50px;
+    font-size: 25px;
+}
+.friends .img{
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-right: 10px;
+
+}

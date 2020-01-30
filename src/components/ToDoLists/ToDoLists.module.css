@@ -1,0 +1,55 @@
+.ToDoListsPosition{
+    padding: 30px;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+.ToDolistsWrapper{
+    display: grid;
+    grid-template-columns: 40px 300px
+}
+.ToDoListTitle{
+    color: #a82d39;
+    text-decoration: none;
+    font-family: "Tekton Pro";
+    font-size: 25px;
+    margin-top: 12px;
+}
+.ToDolistsChanchingWrapper{
+    display: grid;
+    grid-template-columns: 100px 300px
+}
+.ToDoListChangingInput{
+    margin-right: 90%;
+}
+.EditButtonPostition{
+    margin-left: 40px;
+}
+.AddNewTaskWrapper{
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 610px 110px
+}
+.AddTaskButton{
+    margin-top: 13px;
+}
+
+.ShowTasksButton{
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.HideTasksButton{
+    margin-top: 20px;
+    margin-left: 305px;
+}
+.TasksContent{
+    padding: 30px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.tasksposititon{
+   margin-top: 50px;
+    margin-left: 70px;
+}
+

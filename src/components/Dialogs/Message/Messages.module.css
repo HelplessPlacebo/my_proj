@@ -1,0 +1,86 @@
+.MessageFormStyle{
+ padding: 15px;
+    max-width: 100%;
+    width: 500px;
+    background-color: #8bc8d3;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+.dateStyle{
+    margin-top: 25px;
+     margin-left: 200px;
+}
+.img{
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+}
+.messageText{
+    margin-top: 25px;
+    margin-left: 11%;
+}
+.UserNameInMessages{
+    margin-left: 40px;
+}
+.viewed{
+    background-color: #8bc8d3;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 480px;
+}
+.fontStyles{
+    color: darkslategray;
+    text-decoration: none;
+    font-family: "Tekton Pro";
+    font-size: 19px;
+}
+.confirmDeletingWindow{
+
+margin-bottom: 30%;
+}
+
+.confirmDeletingWindowButtons{
+    margin-top : 40px;
+    margin-left: 24%;
+    margin-bottom: 20px;
+
+}
+.buttontsDelta{
+    margin-left: 35px;
+}
+.confirmDeletingWindowHeader{
+    margin-left: 30%;
+}
+.confirmDeletingWindowText{
+margin: 20px;
+
+}
+.imgClose{
+    width: 20px;
+    height: 20px;
+    margin-left: 95%;
+    margin-top: 2%;
+}
+.deleteMessageStyle{
+border-radius: 25px;
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+    color : #fff;
+    background-color: #07c6b6;
+    border: none;
+    border-bottom: 4px solid #8260ff;
+    cursor: pointer;
+}
+.deleteMessageStyle:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #ff3a0b;
+}
+.wrapper{
+    background-color: #ffe7c5;
+}
