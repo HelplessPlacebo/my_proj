@@ -17,10 +17,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
     const handleClose = () => {
         setOpen(false);
     };
-    const handleSubmit = () => {
-        alert(document.getElementById('FindingUserName').value)
-        setOpen(false);
-    };
+
 
     return (
 
@@ -35,6 +32,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
                        enter user name with you looking for
                     </DialogContentText>
                     <TextField
+                        onChange={props.OnFindUserFieldValueChanging}
                         autoFocus
                         margin="dense"
                         id="FindingUserName"

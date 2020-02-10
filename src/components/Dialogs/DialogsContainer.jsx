@@ -5,7 +5,7 @@ import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {AuthRedirect} from "../hocs/AuthRedirect";
 import {compose} from "redux";
-import {GetAllDialogsSelector, GetMessagesDataSelector} from "../../data/DialogsSelectors";
+import {GetAllDialogsSelector, GetIsFetchingDialogs, GetMessagesDataSelector} from "../../data/DialogsSelectors";
 import { withRouter} from 'react-router-dom'
 
 
@@ -25,7 +25,8 @@ class DialogsContainer extends React.Component {
 
 let StateToProps = (state) => ({
  MessagesData: GetMessagesDataSelector(state),
-    AllDialogs : GetAllDialogsSelector(state)
+    AllDialogs : GetAllDialogsSelector(state),
+    IsFetching : GetIsFetchingDialogs(state)
 })
 
 export default compose(connect(StateToProps, {SetNewMessages,

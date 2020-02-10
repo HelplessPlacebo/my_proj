@@ -9,8 +9,10 @@ import {GetProfileThunk,
     SetIsMyPage,UpdateProfileInfoThunk}
     from '../../data/ProfileReduser'
 import {compose} from "redux";
-import { GetIsMyPageSelector,
-    GetProfileSelector, GetStatusSelector} from "../../data/ProfileSelectors";
+import {
+    GetIsMyPageSelector, GetProfileIsFetching,
+    GetProfileSelector, GetStatusSelector
+} from "../../data/ProfileSelectors";
 import {GetIsLoginedSelector, GetUserIDSelector} from "../../data/AuthSelectors";
 import {SendNewMessageThunk} from "../../data/DIalogsReduser"
 
@@ -57,6 +59,7 @@ class ProfileContainer extends React.Component {
                       SaveProfileData={this.props.UpdateProfileInfoThunk}
                       SendNewMessageThunk={this.props.SendNewMessageThunk}
                       IsLogined={this.props.IsLogined}
+                      IsFetching={this.props.IsFetching}
                         />
         )
     }
@@ -67,6 +70,7 @@ let MapStateToProps = (state) => ({
     status : GetStatusSelector(state),
     userID : GetUserIDSelector(state),
     IsMyPage : GetIsMyPageSelector(state),
+    IsFetching : GetProfileIsFetching(state),
     IsLogined : GetIsLoginedSelector(state)})
 
 

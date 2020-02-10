@@ -80,30 +80,31 @@ const ToDoList = (props) => {
 
             <div>
 
-                <AddNewTask ListID={props.ListID}
-                            AddNewTaskThunk={props.AddNewTaskThunk}
-                />
+                {props.TaskIsFetching ? <Preloader/> :
+                    <>
+                    <AddNewTask ListID={props.ListID}
+                                AddNewTaskThunk={props.AddNewTaskThunk}/>
 
-                <div>
-                    {props.ToDoListTasks.items ?
-                        <div className={TDLS.tasksposititon}>
-                            <Tasks
-                                DeleteTaskThunk={props.DeleteTaskThunk}
-                                ToDoListTasks={props.ToDoListTasks}
-                                UpdateTaskInformationThunk={props.UpdateTaskInformationThunk}
-                            />
-                        </div>
-
-                        :
-                        <Preloader/>
-                    }
-
+                    <div>
+                        {
+                            props.ToDoListTasks.items &&
+                                <div className={TDLS.tasksposititon}>
+                                    <Tasks
+                                        DeleteTaskThunk={props.DeleteTaskThunk}
+                                        ToDoListTasks={props.ToDoListTasks}
+                                        UpdateTaskInformationThunk={props.UpdateTaskInformationThunk}
+                                    />
+                                </div>
+                        }
 
                     <div className={TDLS.HideTasksButton}>
-                        <HideTasksButton HandleOnClick={ShowTaskModeOFF}/>
+                    <HideTasksButton HandleOnClick={ShowTaskModeOFF}/>
                     </div>
-                </div>
 
+                    </div>
+
+                    </>
+                }
             </div>
             :
             <div className={TDLS.ShowTasksButton}>

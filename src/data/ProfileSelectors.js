@@ -13,5 +13,7 @@ export const GetPostsSelector = (state) =>{
 export const GetOwnNameSelector = (state) =>{
     return state.ProfileData.OwnName
 }
-
+export const GetProfileIsFetching = (state) =>{
+    return state.ProfileData.IsFetching
+}
 

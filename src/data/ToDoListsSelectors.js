@@ -13,3 +13,6 @@ export const GetToDoListTasks = (state) =>{
 export const GetToDoListIsFetching = (state) =>{
     return state.ToDoListsData.IsFetching
 }
+export const GetToDoListTaskIsFetching = (state) =>{
+    return state.ToDoListsData.TaskIsFetching
+}

@@ -5,7 +5,7 @@ import {compose} from "redux";
 import ToDoLists from "./ToDoLists";
 import {
     GetToDoListIsFetching,
-    GetToDoLists,
+    GetToDoLists, GetToDoListTaskIsFetching,
     GetToDoListTasks,
     GetToDoListTasksCount,
     GetToDoListTasksPage
@@ -16,6 +16,7 @@ import {
     GetToDoListTasksThunk,AddNewTaskThunk,DeleteTaskThunk,
     UpdateTaskInformationThunk
 } from "../../data/ToDoListsReducer"
+import Preloader from "../assetss/common/Loader/Loader";
 
 class ToDoListsContainer extends React.Component {
 
@@ -25,7 +26,12 @@ class ToDoListsContainer extends React.Component {
 
     render() {
         return (
-            <ToDoLists {...this.props} />
+            <>
+                {
+                    this.props.IsFetching ? <Preloader/> :
+                    <ToDoLists {...this.props} />
+                }
+            </>
         )
     }
 }
@@ -35,7 +41,8 @@ let StateToProps = (state) => ({
     ToDoListTasksPage: GetToDoListTasksPage(state),
     ToDoListTasksCount: GetToDoListTasksCount(state),
     ToDoListTasks : GetToDoListTasks(state),
-    IsFetching : GetToDoListIsFetching(state)
+    IsFetching : GetToDoListIsFetching(state),
+    TaskIsFetching : GetToDoListTaskIsFetching(state)
 })
 
 export default compose(connect(StateToProps,

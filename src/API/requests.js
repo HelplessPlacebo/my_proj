@@ -152,12 +152,12 @@ export const API = {
         const DataResponse = await instanceToDoLists.delete(`todo-lists/${todolistId}/tasks/${taskid}`)
         return DataResponse
     },
-    async MyServerReq(){
+/*    async MyServerReq(){
         const Res = await MyServerInstance.get('server')
         return Res
     },
     async MyServerPost(body){
         const Res = await MyServerInstance.post('friends/add',body)
         return Res
-    }
+    }*/
 }

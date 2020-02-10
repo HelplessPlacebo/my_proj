@@ -7,6 +7,7 @@ const SET_TO_DO_LIST_TASKS_Page = 'ToDoLists/SET_TO_DO_LIST_TASKS_Page';
 const SET_TO_DO_LISTS_TASKS_Count = 'ToDoLists/SET_TO_DO_LISTS_TASKS_Count';
 const SET_TO_DO_LIST_TASKS = 'ToDoLists/SET_TO_DO_LIST_TASKS';
 const IsFetching_Toggle = 'ToDoLists/IsFetching_Toggle';
+const TaskIsFetching_Toggle = 'ToDoLists/TaskIsFetching_Toggle';
 
 
 let DefaultState = {
@@ -14,7 +15,8 @@ let DefaultState = {
     ToDoListTasks : [],
     ToDoListTasksPage: 1,
     ToDoListTasksCount: 10,
-    IsFetching : false
+    IsFetching : false,
+    TaskIsFetching : false
 }
 
 const ToDoListsReducer = (state = DefaultState, action) => {
@@ -54,6 +56,9 @@ const ToDoListsReducer = (state = DefaultState, action) => {
         case IsFetching_Toggle:{
             return {...state, IsFetching: action.IsFetching}
         }
+        case TaskIsFetching_Toggle:{
+            return {...state, TaskIsFetching: action.TaskIsFetching}
+        }
         default :
             return state
     }
@@ -75,12 +80,17 @@ export const SetToDoListTasks = (Tasks) => {
 export const ToggleIsFetching = (IsFetching) => {
     return {type : IsFetching_Toggle, IsFetching}
 }
+export const SetTaskIsFetching = (TaskIsFetching) => {
+    return {type : TaskIsFetching_Toggle, TaskIsFetching}
+}
 
 
 
 export const GetToDoListsThunk = () => async (dispatch) => {
+    dispatch(ToggleIsFetching(true))
     const ResponseData = await API.GetToDoLists()
     dispatch(SetToDoLists(ResponseData.data))
+    dispatch(ToggleIsFetching(false))
 }
 
 export const AddNewToDoListsThunk = (title) => async (dispatch) => {
@@ -99,12 +109,13 @@ export const ChangeToDoListTitleThunk = (ToDoListID, Newtitle) => async (dispatc
 }
 
 export const GetToDoListTasksThunk = (ToDoListID, count,page) => async (dispatch) => {
-    dispatch(ToggleIsFetching(true))
+    dispatch(SetTaskIsFetching(true))
    const DataResponse = await API.GetToDoListTasks(ToDoListID, count, page)
+    dispatch(SetTaskIsFetching(false))
     if(!DataResponse.data.error) {
         dispatch(SetToDoListTasks(DataResponse.data))
     }
-    dispatch(ToggleIsFetching(false))
+
 }
 
 export const AddNewTaskThunk = (ToDoListID, TaskTitle) => async (dispatch) => {

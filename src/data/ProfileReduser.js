@@ -7,6 +7,7 @@ const Set_Status_Of_User = '/Profile/Set_Status_Of_User'
 const Set_Photo_Of_User = '/Profile/Set_Photo_Of_User'
 const Set_Is_My_Page = '/Profile/Set_Is_My_Page'
 const Set_Own_Name= '/Profile/Set_Own_Name'
+const Set_IsFetching= '/Profile/Set_IsFetching'
 
 
 let DefaultState = {
@@ -18,7 +19,8 @@ let DefaultState = {
     password: "",
     rememberMe: false,
     IsMyPage: false,
-    OwnName : ""
+    OwnName : "",
+    IsFetching : false
 }
 
 const ProfileReducer = (state = DefaultState, action) => {
@@ -54,6 +56,9 @@ const ProfileReducer = (state = DefaultState, action) => {
         case Set_Own_Name: {
             return {...state, OwnName: action.MyOwnName}
         }
+        case Set_IsFetching: {
+            return {...state, IsFetching: action.IsFetching}
+        }
 
         default :
             return state
@@ -82,41 +87,52 @@ export const SetIsMyPage = (bool) => {
 export const SetOwnName = (MyOwnName) => {
     return {type: Set_Own_Name, MyOwnName}
 }
-
+export const SetIsFetching = (IsFetching) => {
+    return {type: Set_IsFetching, IsFetching}
+}
 
 
 
 export const GetProfileThunk = (ProfileID) => async (dispatch,getState) => {
     const MyID = getState().Auth.userId
+    dispatch(SetIsFetching(true))
     const data = await API.getProfile(ProfileID)
     dispatch(setProfileOfUser(data))
     if (data.userId === MyID) {
         dispatch(SetOwnName(data.fullName))
     }
+    dispatch(SetIsFetching(false))
 }
 
 
 export const GetProfileStatusThunk = (userID) => async (dispatch) => {
+    dispatch(SetIsFetching(true))
     const data = await API.getProfileStatus(userID)
     dispatch(SetStatusOfUser(data))
+    dispatch(SetIsFetching(false))
 }
 
 export const SetProfileStatusThunk = (status) => async (dispatch) => {
+    dispatch(SetIsFetching(true))
     const data = await API.setProfileStatus(status)
     if (data.resultCode === 0) {
         dispatch(SetStatusOfUser(status))
     }
+    dispatch(SetIsFetching(false))
 }
 
 export const SetProfilePhotoThunk = (photo) => async (dispatch) => {
+    dispatch(SetIsFetching(true))
     const data = await API.LoadPhotoOnServer(photo)
     if (data.resultCode === 0) {
         dispatch(SetPhotoOfUser(data.data.photos))
     }
+    dispatch(SetIsFetching(false))
 }
 
 export const UpdateProfileInfoThunk = (profile) => async (dispatch, getState) => {
     const profileID = getState().Auth.userId
+    dispatch(SetIsFetching(true))
     const data = await API.PutProfileDataOnServer(profile)
     if (data.resultCode === 0) {
         dispatch(GetProfileThunk(profileID))
@@ -124,6 +140,7 @@ export const UpdateProfileInfoThunk = (profile) => async (dispatch, getState) =>
         dispatch(stopSubmit("ProfileDataEditorForm",{_error : data.messages[0]}))
         return Promise.reject(data.messages[0])
     }
+    dispatch(SetIsFetching(false))
 }
 
 

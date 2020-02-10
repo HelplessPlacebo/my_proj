@@ -4,6 +4,10 @@ export const GetAllDialogsSelector = (state) =>{
 export const GetMessagesDataSelector = (state) =>{
     return state.MessagesData
 }
+export const GetIsFetchingDialogs = (state) =>{
+    return state.MessagesData.IsFetching
+
+}
 /*export const GetDialogsMessagesSelector = (state) =>{
     return state.MessagesData.DialogsMessages
 }
@@ -13,8 +17,4 @@ export const GetUserAvatarSelector = (state) =>{
 export const GetinterlocutorAvatarSelector = (state) =>{
     return state.MessagesData.InterlocutorAvatar
 }*/
-
-
-
-
 

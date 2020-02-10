@@ -1,8 +1,11 @@
 import React from 'react'
 import LoadingSvg from '../../../assetss/images/loader1.gif';
-import hc from '../../../Header/Header.module.css'
+import ls from './LoaderStyles.module.css'
 
-let Preloader = (props) =>{
-    return <img className={hc.loader} src={LoadingSvg}/>
+
+
+let Preloader = (props ) =>{
+
+    return <img className={ls.large} src={LoadingSvg}/>
 }
 export default Preloader

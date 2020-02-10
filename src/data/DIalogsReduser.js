@@ -5,6 +5,7 @@ const Set_New_Messages = 'Dialogs/Set_New_Messages'
 const Set_InterlocutorAvatar = 'Dialogs/Set_InterlocutorAvatar'
 const Set_UserAvatarForDialogs = 'Dialogs/Set_UserAvatarForDialogs'
 const Set_NewMessagesCount = 'Dialogs/Set_NewMessagesCount'
+const Set_IsFetching = 'Dialogs/Set_IsFetching'
 
 let DefaultState = {
     users: [],
@@ -15,7 +16,8 @@ let DefaultState = {
     DialogsMessages: null,
     InterlocutorAvatar : "",
     UserAvatar : "",
-    NewMessagesCount : 0
+    NewMessagesCount : 0,
+    IsFetching : false
 }
 const DialogsReducer = (state = DefaultState, action) => {
     switch (action.type) {
@@ -41,6 +43,11 @@ const DialogsReducer = (state = DefaultState, action) => {
                 ...state, NewMessagesCount : action.NewMessagesCount
             }
         }
+        case Set_IsFetching :{
+            return {
+                ...state, IsFetching : action.IsFetching
+            }
+        }
         default :
             return state
 
@@ -63,17 +70,25 @@ export const SetNewMessagesCount = (NewMessagesCount) => {
 export const setUserAvatarForDialogs = (UserAvatar) => {
     return {type: Set_UserAvatarForDialogs , UserAvatar}
 }
+export const SetIsFetchingDialogs = (IsFetching) => {
+    return {type: Set_IsFetching , IsFetching}
+}
 
 
 export const GetAllDialogsThunk = () => async (dispatch) => {
+    dispatch(SetIsFetchingDialogs(true))
     const data = await API.GetAllDialogs()
     dispatch(SetAllDialogs(data))
+    dispatch(SetIsFetchingDialogs(false))
 }
 export const GetNewMessagesThunk = (UserId) => async (dispatch) => {
+    dispatch(SetIsFetchingDialogs(true))
     const data = await API.GetNewMessagesFromServer(UserId)
+    dispatch(SetIsFetchingDialogs(false))
     if (!data.error) {
         dispatch(SetNewMessages(data))
     }
+
 
 }
 export const SendNewMessageThunk = (UserId, NewMessage) => async (dispatch) => {

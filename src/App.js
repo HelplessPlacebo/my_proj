@@ -19,15 +19,15 @@ import {GetNewMessagesCountThunk} from "./data/DIalogsReduser";
 import LoginPage from "./components/Login/LoginPage";
 import ToDoListsContainer from "./components/ToDoLists/ToDoListsContainer";
 import {GetIsLoginedSelector} from "./data/AuthSelectors";
-import {API} from "./API/requests"
+/*import {API} from "./API/requests"*/
 /*const Music = React.lazy(() => import('./components/Music/Music'))*/
 
 
 class App extends Component {
     componentDidMount() {
         this.props.InitializationAPPthunk()
-        API.MyServerReq()
-        API.MyServerPost({'id' : '17', 'name': 'wqewq'})
+  /*      API.MyServerReq()
+        API.MyServerPost({'id' : '17', 'name': 'wqewq'})*/
     }
 
     render() {

@@ -2,10 +2,17 @@ import React, {useEffect, useState} from "react"
 import FUStyles from "./FindUser.module.css";
 import User from "./User";
 import FindUserModal from "../MaterialUI/ModalWindow/UserSearchModal";
+import Preloader from "../assetss/common/Loader/Loader";
 
 
 const FindUser = (props) => {
     let [FoundedUser, SetFoundedUser] = useState(props.FoundedUser)
+    let[FindUserFieldValue,SetFindUserFieldValue] = useState("");
+
+    const OnFindUserFieldValueChanging = (el) =>{
+        SetFindUserFieldValue(el.currentTarget.value)
+    }
+
     useEffect(() => {
             SetFoundedUser(props.FoundedUser)
         }, [props.FoundedUser]
@@ -22,8 +29,8 @@ const FindUser = (props) => {
     }
 
 
-    const FindUser = (OnSubmitData) => {
-        props.FindUserThunk(document.getElementById('FindingUserName').value)
+    const FindUser = () => {
+        props.FindUserThunk(FindUserFieldValue)
         FoundingModeON()
     }
 
@@ -31,15 +38,15 @@ const FindUser = (props) => {
     return <div>
         {!FoundingMode ?
             <div className={FUStyles.FindUserButton}>
-                <FindUserModal SubmitModal={FindUser}/>
+                <FindUserModal SubmitModal={FindUser}
+                               OnFindUserFieldValueChanging={OnFindUserFieldValueChanging}/>
             </div>
 
             :
             <div>
-                <div className={FUStyles.foundArea}>
-
-
-
+                {props.FindUserIsFetching ? <Preloader size={"small"}/>
+                : <div>
+                    <div className={FUStyles.foundArea}>
                     {FoundedUser &&
                     <div>
                         <h2 className={FUStyles.SearchingResult}>
@@ -55,13 +62,13 @@ const FindUser = (props) => {
 
                         <div className={FUStyles.FoundedUsers}>
                             <div className={FUStyles.FoundedUsersWrapper}>
-                            {FoundedUser.items.map(item => <User user={item}
-                                                                 key={item.id}
-                                                                 InProcess={props.InProcess}
-                                                                 OnUnFollow={props.OnUnFollow}
-                                                                 OnFollow={props.OnFollow}
-                                                                 IsLogined={props.IsLogined}/>)}
-                        </div>
+                                {FoundedUser.items.map(item => <User user={item}
+                                                                     key={item.id}
+                                                                     InProcess={props.InProcess}
+                                                                     OnUnFollow={props.OnUnFollow}
+                                                                     OnFollow={props.OnFollow}
+                                                                     IsLogined={props.IsLogined}/>)}
+                            </div>
                         </div>
 
                     </div>
@@ -73,8 +80,9 @@ const FindUser = (props) => {
                     onClick={FoundingModeOFF}>
                     go back
                 </button>
+                    </div>
+                }
             </div>
-
         }
 
     </div>

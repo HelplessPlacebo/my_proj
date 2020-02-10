@@ -14,6 +14,9 @@ export const GetCurrentPage = (state) =>{
 export const GetIsFeching = (state) =>{
     return state.UsersData.IsFetching
 }
+export const FindUserIsFetching = (state) =>{
+    return state.UsersData.FindUserIsFetching
+}
 export const GetInProgress = (state) => {
     return state.UsersData.InProcess
 }

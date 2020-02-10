@@ -9,6 +9,7 @@ const DialogInfo = (props) => {
 
     const date = props.MessageSendTime.split("T")[0]
     const time = props.MessageSendTime.split("T")[1].split(".")[0]
+
     return <div className={d.DialogArea}>
         <div className={`${d.item} ${d.active}`}>
         <NavLink   to={`/messages/${props.UserID}`}>

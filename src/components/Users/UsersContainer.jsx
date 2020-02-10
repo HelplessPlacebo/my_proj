@@ -18,7 +18,7 @@ import {
     GetPageSize,
     GetTotalUsersCount,
     GetUsers,
-    GetPortionSize, GetFoundedUserSelector
+    GetPortionSize, GetFoundedUserSelector,FindUserIsFetching
 } from "../../data/Users-Selectors";
 import { GetIsLoginedSelector} from "../../data/AuthSelectors";
 
@@ -40,22 +40,24 @@ Ui component (Users)*/
     render() {
 
         return <>
-            {this.props.IsFetching ? <Preloader/> : null}
-            <PurifyUsers Users={this.props.Users}
-                         totalUsersCount={this.props.totalUsersCount}
-                         pageSize={this.props.pageSize}
-                         OnChangedPage={this.OnChangedPage}
-                         OnFollow={this.props.followThunk}
-                         OnUnFollow={this.props.unfollowThunk}
-                         currentPage={this.props.currentPage}
-                         ToggleInProcess={this.props.ToggleInProcess}
-                         InProcess={this.props.InProcess}
-                         IsLogined={this.props.IsLogined}
-                         ChangePortionSize={this.props.ChangePortionSize}
-                         PortionSize={this.props.PortionSize}
-                         FindUserThunk={this.props.FindUserThunk}
-                         FoundedUser={this.props.FoundedUser}
-            />
+            {this.props.IsFetching ? <Preloader/> :
+                <PurifyUsers Users={this.props.Users}
+                             totalUsersCount={this.props.totalUsersCount}
+                             pageSize={this.props.pageSize}
+                             OnChangedPage={this.OnChangedPage}
+                             OnFollow={this.props.followThunk}
+                             OnUnFollow={this.props.unfollowThunk}
+                             currentPage={this.props.currentPage}
+                             ToggleInProcess={this.props.ToggleInProcess}
+                             InProcess={this.props.InProcess}
+                             IsLogined={this.props.IsLogined}
+                             ChangePortionSize={this.props.ChangePortionSize}
+                             PortionSize={this.props.PortionSize}
+                             FindUserThunk={this.props.FindUserThunk}
+                             FoundedUser={this.props.FoundedUser}
+                             FindUserIsFetching={this.props.FindUserIsFetching}
+                />
+            }
         </>
     }
 }
@@ -68,6 +70,7 @@ let StateToProps = (state) => {
         totalUsersCount: GetTotalUsersCount(state),
         currentPage: GetCurrentPage(state),
         IsFetching: GetIsFeching(state),
+        FindUserIsFetching: FindUserIsFetching(state),
         InProcess: GetInProgress(state),
         PortionSize : GetPortionSize(state),
         FoundedUser : GetFoundedUserSelector(state)

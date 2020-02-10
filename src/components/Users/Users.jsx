@@ -19,6 +19,7 @@ let PurifyUsers = (props) => {
                       OnUnFollow={props.OnUnFollow}
                       OnFollow={props.OnFollow}
                       IsLogined={props.IsLogined}
+                       FindUserIsFetching={props.FindUserIsFetching}
             />
 
         <div className={us.UsersWrapper}>

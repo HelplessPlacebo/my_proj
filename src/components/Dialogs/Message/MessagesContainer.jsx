@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {withRouter} from 'react-router-dom'
 import {
+    GetIsFetchingDialogs,
     GetMessagesDataSelector,
 } from "../../../data/DialogsSelectors";
 import MessagesWithUser from "./MessagesWithUser";
@@ -18,6 +19,7 @@ import {
 } from "../../../data/DIalogsReduser"
 import {GetUserIDSelector} from "../../../data/AuthSelectors";
 import {GetNewMessagesCountSelector} from "../../../data/InitialozationSelectors";
+import Preloader from "../../assetss/common/Loader/Loader";
 
 class MessagesContainer extends React.Component {
 
@@ -34,7 +36,13 @@ class MessagesContainer extends React.Component {
 
     render() {
         return (
-            <MessagesWithUser {...this.props} DialoguserID={this.props.match.params.userID}/>
+            <>
+            {
+                this.props.IsFetching ? <Preloader/> :
+                    <MessagesWithUser {...this.props} DialoguserID={this.props.match.params.userID}/>
+            }
+            </>
+
         )
     }
 }
@@ -42,7 +50,8 @@ class MessagesContainer extends React.Component {
 let StateToProps = (state) => ({
     MessagesData: GetMessagesDataSelector(state),
     MyID: GetUserIDSelector(state),
-    NewMessagesCount : GetNewMessagesCountSelector(state)
+    NewMessagesCount : GetNewMessagesCountSelector(state),
+    IsFetching : GetIsFetchingDialogs(state)
 })
 
 export default  compose(connect(StateToProps,
