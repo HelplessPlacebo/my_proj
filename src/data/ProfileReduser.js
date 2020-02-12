@@ -11,13 +11,9 @@ const Set_IsFetching= '/Profile/Set_IsFetching'
 
 
 let DefaultState = {
-    Posts: [],
-    TextNewPost: '',
+    Posts : [],
     profile: null,
     status: "",
-    email: "",
-    password: "",
-    rememberMe: false,
     IsMyPage: false,
     OwnName : "",
     IsFetching : false

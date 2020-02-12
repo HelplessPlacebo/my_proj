@@ -43,6 +43,7 @@ const ReduxMessageWithUserForm = reduxForm({form: 'messages'})(MessageWithUserFo
 
 
 const MessagesWithUser = (props) => {
+debugger
 
     const SendNewMessage = (Formdata) => {
         props.SendNewMessageThunk(props.DialoguserID, Formdata.MessageTextArea)
@@ -57,7 +58,7 @@ const MessagesWithUser = (props) => {
     )
 
     return <div>
-        {MessagesData.DialogsMessages  ?
+        {MessagesData.DialogsMessages.items  ?
             MessagesData.DialogsMessages.items.map(item => {
                 return (
                     <div  className={mwuStyles.fontStyles} key={item.id} >

@@ -47,5 +47,4 @@ let MapStateToProps = (state) => ({
 })
 
 export default HeaderContainer = connect(MapStateToProps,
-    {LogOutThunk,GetNewMessagesCountThunk})
-(HeaderContainer);
+    {LogOutThunk,GetNewMessagesCountThunk}) (HeaderContainer);

@@ -7,12 +7,9 @@ const IsFetching_Toggle = 'Auth/IsFetching_Toggle'
 const Set_Captcha_Url = 'Auth/Set_Captcha_Url'
 
 let DefaultState = {
-    userId: null,
-    email: null,
-    login: null,
     IsLogined: false,
     IsFetching: false,
-    CaptchaUrl : null
+    CaptchaUrl: null
 }
 
 const AuthReducer = (state = DefaultState, action) => {
@@ -54,13 +51,13 @@ export const AuthMeThunk = () => async (dispatch) => {
     }
 }
 
-export const LoginThunk = (email, password, rememberMe = false,captcha) =>
+export const LoginThunk = (email, password, rememberMe = false, captcha) =>
     async (dispatch) => {
-        const data = await API.Login(email, password, rememberMe,captcha)
+        const data = await API.Login(email, password, rememberMe, captcha)
         if (data.resultCode === 0) {
             dispatch(AuthMeThunk())
         } else {
-            if(data.resultCode === 10){
+            if (data.resultCode === 10) {
                 dispatch(GetCaptchaThunk())
             }
             dispatch(stopSubmit("login", {_error: data.messages[0]}))
@@ -75,8 +72,8 @@ export const LogOutThunk = () => async (dispatch) => {
 }
 export const GetCaptchaThunk = () => async (dispatch) => {
     const data = await API.GetCaptchaFromServer()
-    const captchaURL= data.url
-        dispatch(SetCaptchaUrl(captchaURL))
+    const captchaURL = data.url
+    dispatch(SetCaptchaUrl(captchaURL))
 
 }
 

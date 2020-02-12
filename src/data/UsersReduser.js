@@ -133,7 +133,7 @@ export const getUsersThunk = (currentPage, pageSize) => async (dispatch) => {
 export const unfollowThunk = (userID) => async (dispatch) => {
     dispatch(ToggleInProcess(true, userID))
     const data = await API.DelSub(userID)
-    if (data.resultCode == 0) {
+    if (data.resultCode === 0) {
         dispatch(onUnFollow(userID))
     }
     dispatch(ToggleInProcess(false, userID))
@@ -142,7 +142,7 @@ export const unfollowThunk = (userID) => async (dispatch) => {
 export const followThunk = (userID) => async (dispatch) => {
     dispatch(ToggleInProcess(true, userID))
     const data = await API.AddSub(userID)
-    if (data.resultCode == 0) {
+    if (data.resultCode === 0) {
         dispatch(OnFollow(userID))
     }
     dispatch(ToggleInProcess(false, userID))

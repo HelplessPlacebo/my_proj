@@ -9,8 +9,8 @@ import us from "./Users.module.css"
 
 let PurifyUsers = (props) => {
 
+    props.ChangePortionSize(15);
 
-    {props.ChangePortionSize(15)}
     return <div>
 
             <FindUser  FindUserThunk={props.FindUserThunk}

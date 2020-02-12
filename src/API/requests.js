@@ -15,9 +15,11 @@ const instanceToDoLists = axios.create({
         "API-KEY": "96428d9a-0d9d-4cb1-8a30-3ebf6693ac4b"
     }
 })
+/*
 const MyServerInstance = axios.create({
     baseURL: 'http://localhost:5000/'
 })
+*/
 
 export const API = {
 
@@ -46,7 +48,7 @@ export const API = {
         return response.data
     },
 
-    async getProfileStatus(ProfileID = 2) {
+    async getProfileStatus(ProfileID ) {
         const response = await instance.get(`profile/status/` + ProfileID)
         return response.data
     },

@@ -7,19 +7,17 @@ const Set_UserAvatarForDialogs = 'Dialogs/Set_UserAvatarForDialogs'
 const Set_NewMessagesCount = 'Dialogs/Set_NewMessagesCount'
 const Set_IsFetching = 'Dialogs/Set_IsFetching'
 
+
 let DefaultState = {
-    users: [],
-    messages: [],
-    avatars: [{}],
-    NewMessageText: '',
     AllDialogs: [],
-    DialogsMessages: null,
+    DialogsMessages: {},
     InterlocutorAvatar : "",
     UserAvatar : "",
     NewMessagesCount : 0,
     IsFetching : false
 }
-const DialogsReducer = (state = DefaultState, action) => {
+
+const DialogsReducer = (state  = DefaultState , action ) => {
     switch (action.type) {
 
         case Set_All_Dialogs : {
@@ -55,7 +53,7 @@ const DialogsReducer = (state = DefaultState, action) => {
 }
 
 
-export const SetAllDialogs = (NewAllDialogs) => {
+export const SetAllDialogs = (NewAllDialogs ) => {
     return {type: Set_All_Dialogs, NewAllDialogs}
 }
 export const SetNewMessages = (NewMessagesData) => {

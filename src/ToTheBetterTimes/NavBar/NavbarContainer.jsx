@@ -1,4 +1,4 @@
-import {GetNewMessagesCountThunk} from "./../../data/DIalogsReduser"
+import {GetNewMessagesCountThunk} from "../../data/DIalogsReduser"
 import React from 'react'
 import {connect} from "react-redux";
 import {compose} from "redux";

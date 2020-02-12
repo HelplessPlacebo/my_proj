@@ -11,7 +11,7 @@ let User = (props) => {
         <div>
 
             <NavLink to={'/Profile/' + props.user.id}>
-                <img className={um.img} src={props.user.photos.small != null ? props.user.photos.small : UserPhoto}/>
+                <img  className={um.img} src={props.user.photos.small != null ? props.user.photos.small : UserPhoto}/>
             </NavLink>
             <div  className={pc.UserName}>
                 {props.user.name}

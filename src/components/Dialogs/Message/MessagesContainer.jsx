@@ -47,6 +47,7 @@ class MessagesContainer extends React.Component {
     }
 }
 
+
 let StateToProps = (state) => ({
     MessagesData: GetMessagesDataSelector(state),
     MyID: GetUserIDSelector(state),
